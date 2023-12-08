@@ -1,0 +1,38 @@
+ internal class Program
+ {
+ public class Horse
+ {
+     private string name;
+     private string breed;
+     private int yearOfBirth;
+     public string Name { set { this.name = value; } get { return this.name; } }
+     public string Breed { set { this.breed = value; } get { return this.breed; } }
+     public int YearOfBirth { set { this.yearOfBirth = value; } get { return this.yearOfBirth; } }
+     public Horse(string name, string breed, int yearOfBirth)
+     {
+
+         this.name = name;
+         this.breed = breed;
+         this.yearOfBirth = yearOfBirth;
+     }
+     private void sound()
+     {
+         Console.WriteLine("tck-tck-tck");
+     }
+     public void Print()
+     {
+         int age = DateTime.Now.Year - YearOfBirth;
+         Console.WriteLine($"My name is {name}. I am breed {breed} and i am {age} years.");
+         sound();
+     }
+
+ 
+     static void Main(string[] args)
+     {
+         Horse merry = new Horse("merry", "christmas", 0);
+         merry.Print();
+     }
+     
+
+
+ }
